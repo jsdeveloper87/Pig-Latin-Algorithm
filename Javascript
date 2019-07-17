@@ -1,0 +1,24 @@
+function translatePigLatin(str) {
+
+  let first = '';
+
+  if (str[0] == 'a' || str[0] == 'e' || str[0] == 'i' || str[0] == 'o' || str[0] == 'u') {
+    str = str + "way";
+    return str;
+  } 
+
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] != 'a' && str[i] != 'e' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u') {
+        first += str[i];
+      } else {
+        i = str.length;
+      }
+  }
+  
+  str = str.substring(first.length, str.length).concat(first + "ay");
+
+  return str;
+}
+
+translatePigLatin("algorithm") 
+//should return "algorithmway".
